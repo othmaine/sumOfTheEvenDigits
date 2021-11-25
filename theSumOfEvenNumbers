@@ -1,0 +1,49 @@
+
+package theSumOfEvenNumbers;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        
+        char ch = 'w';
+        
+        int i =0;
+        String stop ;
+        
+        do{ 
+            System.out.println("Enter the number");
+            Scanner scanner = new Scanner (System.in);
+            String number = scanner.next();
+            int len = number.length() ;
+            int sum=0;
+        try{
+            
+            
+       for(int place = 0; place<len ; place++) {
+         ch = number.charAt(place) ;
+         int digit=Integer.parseInt(String.valueOf(ch)); 
+         int checker =digit%2 ;
+
+        
+        if(checker ==0)
+        {
+            sum=digit +sum;
+        }
+
+       }
+        System.out.println("The sum of even numbers =" + sum);
+        }
+        catch (Exception e) {
+            System.err.println("enter a number only");
+           }
+
+    
+        System.out.println( "tab \"stop\" to stop tab another else to continue");
+           
+           stop = scanner.next();
+       
+      }
+       while ( !stop.equalsIgnoreCase("stop"));
+  }  
+}
